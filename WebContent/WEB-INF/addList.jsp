@@ -9,9 +9,6 @@
 								  //강제형변환필요
 	List<GuestbookVo> gbList = (List<GuestbookVo>)request.getAttribute("gbList"); 
 
-
-
-
 %>        
     
 <!DOCTYPE html>
