@@ -24,9 +24,9 @@ public class GuestbookController extends HttpServlet {
 		String act = request.getParameter("action");
 		System.out.println(act);
 		
-		if("addlist".equals(act)) {
+		if("addList".equals(act)) {
 			
-			System.out.println("action = addlist");
+			System.out.println("action = addList");
 			
 			GuestbookDao guestbookDao = new GuestbookDao();
 			List<GuestbookVo> gbList = guestbookDao.getList();
@@ -44,20 +44,21 @@ public class GuestbookController extends HttpServlet {
 			
 			//파라미터 3개를 꺼내온다
 			String name = request.getParameter("name");
-
+			String password = request.getParameter("password");
+			String content = request.getParameter("content");
 			
 			//vo로 만든다
-			//PersonVo personVo = new PersonVo(name, hp, company);
-			//System.out.println(personVo);			
+			GuestbookVo guestbookVo = new GuestbookVo(name,password,content);
+			System.out.println(guestbookVo);			
 			
 			//dao 메모리 올린다
-			//PhoneDao phoneDao = new PhoneDao();
+			GuestbookDao guestbookDao = new GuestbookDao();
 						
 			//dao.insert(vo);
-			//phoneDao.personInsert(personVo);
+			guestbookDao.insert(guestbookVo);
 			
 			//리다이렉트
-			//response.sendRedirect("/phonebookd2/pbc?action=list");
+			response.sendRedirect("/guestbook2/gbc?action=addList");
 			
 		}else if("deleteForm".equals(act)) {
 			System.out.println("action = deleteForm");

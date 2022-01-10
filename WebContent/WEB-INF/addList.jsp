@@ -45,6 +45,7 @@
 			<input type="text" name="action" value="add">
 			</td>
 		</tr>
+
 	</table>
 	</form>
 	<br>
@@ -56,7 +57,7 @@
 			<td><%=gbList.get(i).getNo()%></td>
 			<td><%=gbList.get(i).getName()%></td>
 			<td><%=gbList.get(i).getRegDate()%></td>
-			<td><a href="./deleteForm.jsp?no=<%=gbList.get(i).getNo()%>">삭제</a></td>
+			<td><a href="/guestbook2/gbc?action=deleteForm%>">삭제</a></td>
 		</tr>
 		<tr>
 			<td colspan="4">
