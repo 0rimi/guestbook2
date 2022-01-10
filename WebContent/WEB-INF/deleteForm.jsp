@@ -6,7 +6,7 @@
  
  	//파라미터값 받기, 삭제테이블의 넘버 가져오기.
  	String num = request.getParameter("no");
- 	int no = Integer.parseInt(num);
+ 	//int no = Integer.parseInt(num);
  	
  
  %>
@@ -21,7 +21,8 @@
 		
 		비밀번호 <input type="password" name="password">
 		
-		<!--유저코드--> <input type="hidden" name="no" value="<%=no%>">
+		<br>
+		<!--유저코드--> <input type="text" name="no" value="<%=num%>">
 		<input type="text" name="action" value="delete">
 		<button type="submit">확인</button>
 	</form><br>
