@@ -57,7 +57,7 @@
 			<td><%=gbList.get(i).getNo()%></td>
 			<td><%=gbList.get(i).getName()%></td>
 			<td><%=gbList.get(i).getRegDate()%></td>
-			<td><a href="/guestbook2/gbc?action=deleteForm%>">삭제</a></td>
+			<td><a href="/guestbook2/gbc?action=deleteForm&no=<%=gbList.get(i).getNo()%>">삭제</a></td>
 		</tr>
 		<tr>
 			<td colspan="4">
