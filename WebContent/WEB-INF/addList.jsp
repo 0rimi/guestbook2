@@ -3,17 +3,16 @@
     
 <%@ page import="java.util.List" %>
 
-<%@ page import="com.javaex.dao.GuestbookDao" %>
-<%@ page import="com.javaex.vo.GuestbookVo" %>
+<%@ page import="com.javaex.vo.GuestbookVo" %>    
 
 <%
-	//GuestbookDao써야지 일단
-	GuestbookDao guestbookDao = new GuestbookDao();
-	List<GuestbookVo> gbList = guestbookDao.getList();	
-	
- %>    
-    
-    
+								  //강제형변환필요
+	List<GuestbookVo> gbList = (List<GuestbookVo>)request.getAttribute("gbList"); 
+
+
+
+
+%>        
     
 <!DOCTYPE html>
 <html>
@@ -25,7 +24,7 @@
 
 
 	<!-- 등록폼영역 -->
-	<form action="./add.jsp" method="get" >
+	<form action="/guestbook2/gbc" method="get" >
 	<table border="2" width="500px">
 		<tr>
 			<td>이름</td>
@@ -39,8 +38,11 @@
 			</td>
 		</tr>
 		<tr>
-			<td colspan="4">
+			<td colspan="3">
 				<button type="submit">작성하기</button>
+			</td>
+			<td>
+			<input type="text" name="action" value="add">
 			</td>
 		</tr>
 	</table>
